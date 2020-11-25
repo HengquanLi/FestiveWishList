@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/GrandBearSleepy/FestiveWishList/issues"
   },
-  "homepage": "https://github.com/GrandBearSleepy/FestiveWishList#readme"
+  "homepage": "https://github.com/GrandBearSleepy/FestiveWishList#readme",
+  "dependencies": {
+    "eslint": "^7.14.0"
+  }
 }
