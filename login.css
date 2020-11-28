@@ -1,7 +1,21 @@
-* {
+/* Modal styling */
+
+
+.modal-header{
+    font-family: 'Merriweather Sans', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    align-content: vertical;    
+}
+
+
+/* Log in card styling */
+* {
+   
 }
 body {
     font-family: 'Merriweather Sans', sans-serif;
@@ -101,6 +115,24 @@ body {
     outline: none;
 }
 #passwordID{
+    margin-bottom: 0.5rem;
+    border-radius: 30px;
+    height: 2.4rem;
+    width: 100%;
+    transition: all 0.75s ease-out;
+    padding-left: 20px;
+    outline: none;
+}
+#usernameSignup{
+    margin-bottom: 0.5rem;
+    border-radius: 30px;
+    height: 2.4rem;
+    width: 100%;
+    transition: all 0.75s ease-out;
+    padding-left: 20px;
+    outline: none;
+}
+#passwordSignup{
     margin-bottom: 0.5rem;
     border-radius: 30px;
     height: 2.4rem;
