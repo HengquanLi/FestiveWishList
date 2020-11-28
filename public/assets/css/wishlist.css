@@ -1,8 +1,7 @@
 html{
     font-family: 'Merriweather Sans', sans-serif;
     height: 100%;
-    overflow: hidden;
-    
+    overflow: hidden;    
 }
 body{
     font-family: 'Merriweather Sans', sans-serif;
@@ -14,8 +13,7 @@ body{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .container{
-    background-color: #DA3E3F;
-    /* background-image: url(./assets/Wish_List.png); */
+    background-color: #DA3E3F; 
 }
 h1{
     margin-top: 1rem;
@@ -25,7 +23,15 @@ h1{
     margin-top: 1rem;
     text-align: center;  
     color: white;
-    text-decoration-thickness: 50px;
+}
+#frontCoverText{
+    margin-top: 5rem;
+    margin-left: 35%;
+    margin-right: 35%;
+    text-emphasis: bolder;
+    text-align: center;
+    text-rendering: optimizeLegibility;
+    font-size: larger;
 }
 .scene{
     width: 45%;
@@ -54,12 +60,11 @@ h1{
 }
 .front,
 .back{
-    /* display: flex; */
     justify-content: space-around;
     align-content: center;
     position: absolute;    
-    min-width:600px;
-    min-height: 800px;
+    min-width:500px;
+    min-height: 700px;
     box-sizing: border-box;
     backface-visibility: hidden;
     background-color:   white;
@@ -82,8 +87,6 @@ h1{
 }
 p{
     margin: 0 0 0.1em;
-    /* background-color: aquamarine; */
-    /* text-indent: 1em; */
 }
 #pageContent{  
     margin-top: 2rem;   
@@ -108,7 +111,7 @@ p{
     padding-bottom: 15px;
     color: #338ECE;
     font-weight: bold; 
-    padding-top: 20px;
+    padding-top: 10px;
     border: none;
     outline: none;
 }
@@ -134,7 +137,6 @@ p{
     border-bottom: 3px solid #DA3E3F;
     transform: translateX(-100%);
     transition: all 0.3s ease;
-
 }
 .content-name{
     position: absolute;
@@ -153,7 +155,7 @@ p{
     transform: translateX(0%);
 }
 button{   
-        padding: 0.5rem 3rem;
+        /* padding: 0rem; */
         background: none;
         border: none;
         box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
@@ -161,16 +163,16 @@ button{
         cursor: pointer;
         font-weight: bold;
         color: white;
-        background: #DA3E3F;
-        width: 50%;
-        height: 2.4rem;
+        background: #DA3E3F;    
+        height: 2rem;
         transition: all 0.75s ease-out; 
         border: none;
         outline: none;   
-        width:50%;
-        margin-left:25%;
-        margin-right:25%;
-        margin-top: 2rem;
+        width:30%;
+        margin-left:35%;
+        margin-right:35%;
+        margin-top: 10px;
+        margin-bottom: 10px;
       
 }
 button:active {
@@ -178,8 +180,10 @@ button:active {
         color: white;
         border: none;
         outline: none;
-        width:50%;
-        margin-left:25%;
-        margin-right:25%;
+        width:30%;
+        margin-left:35%;
+        margin-right:35%;
+        margin-top: 10px;
+        margin-bottom: 10px;
 }
 
