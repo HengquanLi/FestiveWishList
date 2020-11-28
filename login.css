@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Merriweather Sans', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 1000px;
+    background-color: #787c80;
+}
+.container {   
+    width: 50%; 
+    max-height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} 
+.card {    
+    transform-style: preserve-3d ;
+    background-color: white;    
+    min-height: 80vh;
+    width: 35rem;
+    border-radius: 30px;
+    padding: 0rem 5rem;
+    box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2), 0px 0px 50px rgba(0, 0, 0, 0.2);
+}
+.heart {
+    min-height: 35vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.heart img {
+    width: 15rem;
+    z-index: 2;
+    transition: all 0.75s ease-out;
+}
+.rectangle {
+    width: 25rem;
+    height: 12rem;
+    background: linear-gradient(
+        to right,
+        #728394,
+        rgba(8, 83, 156, 0.75)
+    );
+    position: absolute;
+    border-radius: 30px;
+    z-index: 1;
+}
+.info h1 {
+    font-size: 3rem;
+    text-align: center;
+    transition: all 0.75s ease-out;
+}
+.info h3 {
+    font-size: 1.3rem;
+    padding: 2rem 0rem;
+    color: #585858;
+    font-weight: lighter;
+    text-align: center;
+    transition: all 0.75s ease-out;
+}
+.login{
+    display: flex; 
+    margin-top: 0.5rem;
+    transition: all 0.75s ease-out;
+}
+.login button {
+    padding: 0.5rem 3rem;
+    background: none;
+    border: none;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bold;
+    color: white;
+    background: #DA3E3F;
+    width: 100%;
+    height: 2.4rem;
+    transition: all 0.75s ease-out;
+    outline: none;    
+}
+.button:active {
+    background: #585858;
+    color: white;
+    border: none;
+    
+}
+#usernameID{
+    margin-bottom: 0.5rem;
+    border-radius: 30px;
+    height: 2.4rem;
+    width: 100%;
+    transition: all 0.75s ease-out;
+    padding-left: 20px;
+    outline: none;
+}
+#passwordID{
+    margin-bottom: 0.5rem;
+    border-radius: 30px;
+    height: 2.4rem;
+    width: 100%;
+    transition: all 0.75s ease-out;
+    padding-left: 20px;
+    outline: none;
+}

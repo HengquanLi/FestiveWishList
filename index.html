@@ -3,38 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans&display=swap" rel="stylesheet">
-    <title>Wish List</title>
+    <link rel="stylesheet" href="login.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>Wishlist Login</title>
 </head>
 
 <body>
     <div class="container">
         <div class="card">
-            <div class="heartshop">
-                <div class="circle"></div>
+            <div class="heart">
+                <div class="rectangle"></div>
                 <img src="./assets/heart.png" alt="heart shopping">
             </div>
-            <div class="info"></div>
-            <h1 class="title"> Wish List</h1>
-            <h3> Login to view your wishlists </h3>
+            <div class="info">
+                <h1 class="title"> Wish List</h1>
+                <h3> Login to view your wishlists </h3>
+            </div>
             <div class="username">
-                <input type='text' placeholder="Username">
+                <input id="usernameID" type='text' placeholder="    Username">
             </div>
             <div class="password">
-                <input type='text' placeholder="Password">
+                <!-- Password field -->
+                <input id="passwordID" type='text' placeholder="    Password">
+                <!-- An element to toggle between password visibility -->
+                <input type="checkbox" onclick="myFunction()"> Show Password
             </div>
-            <div class="loginBtns">            
-                <div class="loginBtn"></div>
-                <button>Login</button>
+            <div class="login">                
+                <button class="button"><a href="./wishlist.html">Login</button></a>
             </div>
         </div>
     </div>
 
-
+ 
     </div>
-    <script src="app.js"></script>
+    <script src="login.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+   
 </body>
 
 </html>

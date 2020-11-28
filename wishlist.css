@@ -1,0 +1,185 @@
+html{
+    font-family: 'Merriweather Sans', sans-serif;
+    height: 100%;
+    overflow: hidden;
+    
+}
+body{
+    font-family: 'Merriweather Sans', sans-serif;
+    background-color: #787c80;
+    background-size: cover;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.container{
+    background-color: #DA3E3F;
+    /* background-image: url(./assets/Wish_List.png); */
+}
+h1{
+    margin-top: 1rem;
+    text-align: center;        
+}
+#pageTitle{
+    margin-top: 1rem;
+    text-align: center;  
+    color: white;
+    text-decoration-thickness: 50px;
+}
+.scene{
+    width: 45%;
+    height: 90%;
+    margin: 5% 5% 5% 50%;
+    perspective: 1000px;
+}
+.book{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+}
+.page{
+  
+    background-size: contain;
+    cursor: pointer;
+    position: absolute;
+    color: black;
+    width: 100%;
+    height: 100%;
+    transition: 1.5s transform;
+    transform-style: preserve-3d;
+    transform-origin: left center;
+    
+}
+.front,
+.back{
+    /* display: flex; */
+    justify-content: space-around;
+    align-content: center;
+    position: absolute;    
+    min-width:600px;
+    min-height: 800px;
+    box-sizing: border-box;
+    backface-visibility: hidden;
+    background-color:   white;
+	margin: 0 auto;	
+	-webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
+	-moz-box-shadow: 0 0 8px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 0 8px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
+}
+.back{
+    transform: rotateY(180deg);
+}
+.page.active{
+    z-index: 1;
+}
+.page.flipped{
+    transform: rotateY(-180deg);
+}
+.page.flipped:last-of-type{
+    z-index: 1;
+}
+p{
+    margin: 0 0 0.1em;
+    /* background-color: aquamarine; */
+    /* text-indent: 1em; */
+}
+#pageContent{  
+    margin-top: 2rem;   
+}
+#pageContentFront{
+    margin-top: 8rem;   
+    background-color: white;
+    -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
+	-moz-box-shadow: 0 0 8px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 0 8px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
+}
+.form{
+    margin-left: 50px;
+    padding-left: 50px;
+    width: 85%;
+    position: relative;
+    height: 50px;
+}
+.form input{
+    width: 100%;
+    height: 100%;
+    padding-bottom: 15px;
+    color: #338ECE;
+    font-weight: bold; 
+    padding-top: 20px;
+    border: none;
+    outline: none;
+}
+.form label{
+    /* padding-bottom: 6px; */
+    position: absolute;   
+    bottom: 0px;
+    left: 0%;
+    height: 100%;
+    width: 100%;  
+    pointer-events: none;  
+    border-bottom: 1px solid black
+}
+.forminput, textarea {
+    background-color:white
+}
+.form label::after {
+    content: "";
+    position: absolute;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    border-bottom: 3px solid #DA3E3F;
+    transform: translateX(-100%);
+    transition: all 0.3s ease;
+
+}
+.content-name{
+    position: absolute;
+    bottom: 5px;
+    left: 0px;
+    transition: all 0.3s ease;
+}
+.form input:focus + .label-name .content-name
+{
+    transform: translateY(-150%);
+    font-size: 14px;
+    color: #DA3E3F;
+}
+.form input:focus + .label-name::after, 
+.form input:valid + .label-name::after {
+    transform: translateX(0%);
+}
+button{   
+        padding: 0.5rem 3rem;
+        background: none;
+        border: none;
+        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+        border-radius: 30px;
+        cursor: pointer;
+        font-weight: bold;
+        color: white;
+        background: #DA3E3F;
+        width: 50%;
+        height: 2.4rem;
+        transition: all 0.75s ease-out; 
+        border: none;
+        outline: none;   
+        width:50%;
+        margin-left:25%;
+        margin-right:25%;
+        margin-top: 2rem;
+      
+}
+button:active {
+        background: #585858;
+        color: white;
+        border: none;
+        outline: none;
+        width:50%;
+        margin-left:25%;
+        margin-right:25%;
+}
+
