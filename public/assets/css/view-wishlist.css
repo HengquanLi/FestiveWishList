@@ -9,14 +9,55 @@
     padding:0;
 }
 body{
+    position: relative;
     font-family: 'Merriweather Sans', sans-serif;
     width: 100%;
     min-height: 100vh;
+    font-family: 'Merriweather Sans', sans-serif;
+    background-color: #787c80;
+    background-size: cover;
+    margin: 0;
+   
+}
+#backIcon{
+    color: #DA3E3F;
+    font-size: 100px;
+    z-index: 3;
+    position: absolute;
+    left: 25;
+    right: 0;
+    top: 298px;
+    height: 100px;     
+    padding: 0;
+    margin-top: 9rem;        
+}
+
+#backIcon:hover
+{
+  animation: bounce linear infinite 1s;
+}
+
+@keyframes bounce
+{
+  0%{
+    padding-right: 100px;
+    padding-left: 0;
+  }
+  
+  50%{
+    padding-right: 0;
+    padding-left: 100px;
+  }
+  
+  100%{
+    padding-right: 100px;
+    padding-left: 0;
+  }
 }
 .cardTwo{
     margin: 100px auto 0;
-    width: 300px;
-    height: 600px;
+    width: 250px;
+    height: 350px;
     perspective: 1000px;
 }
 .card__inner1{
@@ -77,14 +118,14 @@ body{
     box-shadow: 0px 3px 18px 3px rgba(0, 0, 0, 0.2);
 }
 .card__face--front{
-    background-image: linear-gradient(to bottom right, var(--primary), var(--secondary));
+    background-image: url(../img/wishlistsml.png);
     display: flex;
     align-items: center;
     justify-content: center;
 }
 .card__face--front h2{
-    color:#fff;
-    font-size: 32px;
+    color:rgb(43, 41, 41);
+    font-size:30px;
 }
 .card__face--back{
     background-color: var(--light);
@@ -142,42 +183,3 @@ body{
     font-size: 18px;
     line-height: 1.5;
 }
-/* Old cards
-.card-container{
-    width: 200px;
-    height: 300px;
-    
-}
-.card{
-    width: 100%;
-    height: 100%;  
-    transition: transform 1s ease-in-out;
-    transform-style: preserve-3d;
-}
-.card-container:hover .card{
-    transform: rotateY(180deg)
-}
-.card figure{
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    margin: 0;
-    border-radius: 5px;  
-    justify-content: center;
-    flex-direction: column;
-    margin-top: 20px;
-    outline: none;
-
-}
-.card .front{
-    background: rgb(129, 142, 180);
-    color: white;
-    text-align: center;
-
-}
-.card .back{
-    background: rgb(218, 151, 151);
-    color: white;
-    transform: rotateY(180deg);
-    
-} */
