@@ -23,9 +23,7 @@ body{
     color: #DA3E3F;
     font-size: 100px;
     z-index: 3;
-    position: absolute;
-    left: 25;
-    right: 0;
+    position: absolute; 
     top: 298px;
     height: 100px;     
     padding: 0;
