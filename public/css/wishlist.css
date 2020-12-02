@@ -15,13 +15,12 @@ body{
 .container{
     background-color: #DA3E3F; 
 }
+
 #backIcon{
     color: #DA3E3F;
     font-size: 100px;
     z-index: 3;
-    position: absolute;
-    left: 25;
-    right: 0;
+    position: fixed;
     top: 298px;
     height: 100px;     
     padding: 0;
@@ -193,11 +192,17 @@ button{
         border: none;
         outline: none;   
         width:30%;
-        margin-left:35%;
-        margin-right:35%;
+        margin-left:6%;
+        margin-right:6%;
         margin-top: 10px;
         margin-bottom: 10px;
+
+       
       
+}
+#view{
+    text-decoration: none;
+    color: white;
 }
 button:active {
         background: #585858;
@@ -205,8 +210,8 @@ button:active {
         border: none;
         outline: none;
         width:30%;
-        margin-left:35%;
-        margin-right:35%;
+        margin-left:25%;
+        margin-right:25%;
         margin-top: 10px;
         margin-bottom: 10px;
 }
