@@ -22,4 +22,4 @@ module.exports = function (app) {
       res.json(dbWish);
     });
   });
-
+}
