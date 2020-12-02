@@ -42,3 +42,13 @@ function myFunction() {
   }
 }
 myFunction();
+
+function myFunction2() {
+  const x = document.getElementById('passwordSignup');
+  if (x.type === 'password') {
+    x.type = 'text';
+  } else {
+    x.type = 'password';
+  }
+}
+myFunction2();
