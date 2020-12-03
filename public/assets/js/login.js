@@ -53,9 +53,8 @@ function myFunction2() {
 }
 myFunction2();
 
-
 function myFunction3() {
-  const x = document.getElementById('passwordSignup');
+  const x = document.getElementById('confirmPWsignup');
   if (x.type === 'password') {
     x.type = 'text';
   } else {

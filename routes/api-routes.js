@@ -5,10 +5,12 @@ const passport = require('../config/passport');
 // eslint-disable-next-line func-names
 module.exports = function (app) {
   app.post('/api/login', passport.authenticate('local'), (req, res) => {
+    console.log("got to login post route");
     res.json(req.user);
   });
 
   app.post('/api/signup', (req, res) => {
+    console.log("got to signup post route");
     // eslint-disable-next-line no-console
     db.User.create({
       email: req.body.email,

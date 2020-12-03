@@ -4,6 +4,7 @@ $(document).ready(() => {
 //   const signUpForm = $('form.signup');
   const emailInput = $('#usernameSignup');
   const passwordInput = $('#passwordSignup');
+  const confirmPW = $('#confirmPWsignup');
 
   $('#signupSubmit').click((event) => {
     // eslint-disable-next-line no-console
@@ -15,16 +16,26 @@ $(document).ready(() => {
     };
 
     if (!userData.email || !userData.password) {
-      return;
+      $('#confirmPWdiv').append('<br>Username and password fields cannot be blank.');
     }
     // eslint-disable-next-line no-use-before-define
-    signUpUser(userData.email, userData.password);
-    emailInput.val('');
-    passwordInput.val('');
+    if (confirmPW.val() === passwordInput.val()) {
+      console.log('passwords match');
+      // eslint-disable-next-line no-use-before-define
+      signUpUser(userData.email, userData.password);
+      emailInput.val('');
+      passwordInput.val('');
+    } else {
+      // eslint-disable-next-line no-console
+      console.log('Passwords DO NOT match');
+      // eslint-disable-next-line no-alert
+      $('#confirmPWdiv').append('<br>Passwords DO NOT match.');
+    }
   });
 
-  function signUpUser(email, password) {
+  function signUpUser(email, password) { 
     // eslint-disable-next-line no-undef
+    event.preventDefault();
     $.post('/api/signup', {
       email: email,
       password: password,
@@ -32,13 +43,15 @@ $(document).ready(() => {
       .then((data) => {
         // eslint-disable-next-line no-alert
         window.location.replace('/');
+        $('.modal').modal();
+        $('#signedUpSuccess').modal('open');
       })
       // eslint-disable-next-line no-use-before-define
       .catch(handleLoginErr);
-  }
 
-  function handleLoginErr(err) {
-    $('#alert .msg').text(err.responseJSON);
-    $('#alert').fadeIn(500);
+    function handleLoginErr(err) {
+      $('#alert .msg').text(err.responseJSON);
+      $('#alert').fadeIn(500);
+    }
   }
 });

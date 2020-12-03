@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -50,12 +51,35 @@
                                 <!-- Password Signup -->
                                 <div class="password">
                                     <input id="passwordSignup" type='text' placeholder="    Password">
+                                    <input type="checkbox" onclick="myFunction2()"> Show Password
+                                </div>
+                                <!-- Confirm Password Signup -->
+                                <div class="password" id="confirmPWdiv">
+                                    <input id="confirmPWsignup" type='text' placeholder="    Confirm Password">
+                                    <input type="checkbox" onclick="myFunction3()"> Show Password
                                 </div>
                             </div>
                             <div class="modal-footer">
                                 <input class="btn btn-default" data-dismiss="modal" value="Close">
                                 <!-- This is the signup submit button  -->
-                                <input id="signupSubmit" class="btn btn-default" value="Register">
+                                <input class="btn btn-default" id="signupSubmit" value="Register">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal fade" id="signedUpSuccess">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <img id="signUpLogo" src="./img/signup.png" alt="heart shopping">
+                            </div>
+                            <div class="modal-body">
+                                <div class="d-flex justify-content-center">
+                                    <h1 id="signedUpSuccessText">Signed Up Successfully!</h1>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <input class="btn btn-default" data-dismiss="modal" value="Ok" id="okbtn">
                             </div>
                         </div>
                     </div>
@@ -84,7 +108,7 @@
                 <input type="checkbox" onclick="myFunction()"> Show Password
             </div>
             <div class="login">
-                <button class="button"><a href="./wishlist.html" id="buttonTextColor">Login</button></a>
+                <button class="button"><a id="buttonTextColor">Login</button></a>
                 <button class="button"><a href="#" data-toggle="modal" data-target="#signupModal" id="buttonTextColor">
                         Sign Up</button></a>
             </div>
@@ -101,9 +125,12 @@
         integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
         crossorigin="anonymous"></script>
     <!-- Script links--------------------------------------------------- -->
-    <script src="./js/login.js"></script>
-    <script src="./js/view-wishlist.js"></script>
-    <script src="./js/wishlist.js"></script>
+    <script src="/assets/js/login.js"></script>
+    <script src="/assets/js/view-wishlist.js"></script>
+    <script src="/assets/js/wishlist.js"></script>
+    <script src="/assets/js/authenticate-login.js"></script>
+    <script src="/assets/js/authenticate-signup.js"></script>
+
 </body>
 
 </html>

@@ -17,6 +17,11 @@ module.exports = function (sequelize, DataTypes) {
       allowNull: false
     },
   });
+
+// if (User.email.validate.isEmail === false) {
+//   $("#usernameSignup").append(" <p>Please enter a valid email adress.</p> ")
+// };
+
   User.associate = function (models) {
     User.hasMany(models.Wish, {
       onDelete: "cascade"
