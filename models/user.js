@@ -17,6 +17,11 @@ module.exports = function (sequelize, DataTypes) {
       allowNull: false
     },
   });
+  User.associate = function (models) {
+    User.hasMany(models.Wish, {
+      onDelete: "cascade"
+    });
+  };
   // eslint-disable-next-line func-names
   User.prototype.validPassword = function (password) {
     return bcrypt.compareSync(password, this.password);
@@ -25,5 +30,6 @@ module.exports = function (sequelize, DataTypes) {
     // eslint-disable-next-line no-param-reassign
     user.password = bcrypt.hashSync(user.password, bcrypt.genSaltSync(10), null);
   });
+  
   return User;
 };

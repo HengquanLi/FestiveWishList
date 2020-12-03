@@ -154,12 +154,3 @@ body {
     padding-left: 20px;
     outline: none;
 }
-#confirmPWsignup{
-    margin-bottom: 0.5rem;
-    border-radius: 30px;
-    height: 2.4rem;
-    width: 100%;
-    transition: all 0.75s ease-out;
-    padding-left: 20px;
-    outline: none;
-}

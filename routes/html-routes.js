@@ -24,6 +24,6 @@ module.exports = function(app) {
 
   // Here we've add our isAuthenticated middleware to this route.
   app.get('/wishlist', isAuthenticated, (req, res) => {
-    res.sendFile(path.join(__dirname, '../wishlist.html'));
+    res.sendFile(path.join(__dirname, '../wishlist.html')); 
   });
 };
