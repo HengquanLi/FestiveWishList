@@ -19,10 +19,10 @@ module.exports = function (sequelize, DataTypes) {
   Wish.associate = function (models) {
     Wish.belongsTo(models.User, {
       foreignKey: {
-        allowNull:false
+        allowNull: false
       }
-    })
-  }
+    });
+  };
 
   return Wish;
 };

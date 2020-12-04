@@ -34,7 +34,7 @@ $(document).ready(() => {
     // eslint-disable-next-line no-plusplus
     for (let i = 0; i < items.length; i++) {
       console.log(items[i].value);
-      const itemValue = items[i].value;
+      const itemValue = items[i].value.trim();
       console.log(itemValue);
       if (itemValue !== '') {
         itemArray.push(itemValue);
@@ -46,12 +46,61 @@ $(document).ready(() => {
     if (!wishListName) {
       return;
     }
-    // getItems();
+
     const newWishList = {
       wishName: wishListName.val().trim(),
       item: JSON.stringify(itemArray),
     };
-    console.log(newWishList);
-    $.post('/api/wishlist', newWishList);
+    // console.log(newWishList);
+    // $.post('/api/wishlist', newWishList);
+    $.ajax({
+      url: '/api/wishlist',
+      type: 'POST',
+      data: newWishList,
+      cache: false,
+      datatype: 'json',
+      success(returns) {
+        if (returns) alert('Wish list has been saved!!');
+        else alert('Oops, something is WRONG!!');
+      },
+    });
   });
+
+  $('#upDataList').on('click', (event) => {
+    event.preventDefault();
+    const itemArray = [];
+    const wishListName = $('#wishlistName');
+    const items = $('.item');
+
+    for (let i = 0; i < items.length; i++) {
+      console.log(items[i].value);
+      const itemValue = items[i].value.trim();
+      console.log(itemValue);
+      if (itemValue !== '') {
+        itemArray.push(itemValue);
+      }
+    }
+    
+    if (!wishListName) {
+      return;
+    }
+    const url = window.location.href
+    const newWishList = {
+      // wishName: wishListName.val().trim(),
+      item: JSON.stringify(itemArray),
+      id: url[url.length - 2],
+    };
+    console.log(newWishList);
+    $.ajax({
+      url: '/api/wishlist/',
+      type: 'PUT',
+      data: newWishList,
+      cache: false,
+      datatype: 'json',
+      success(returns) {
+        if (returns) alert('Wish list has been updated!!');
+        else alert('Oops, something is WRONG!!');
+      },
+    });
+  })
 });

@@ -52,14 +52,17 @@
                                     <ul>
                                         {{#each this.item}}
                                         <li>
-                                            {{this}}
+                                            <a href="https://www.amazon.com.au/s?k={{this}}"
+                                                target="_blank">{{this}}</a>
                                         </li>
-
                                         {{/each}}
-
                                     </ul>
+                                    <form id="cform" action="/api/wishlist/{{this.id}}" method="put">
+                                        <button type="submit" class="btn add-btn">Edit</button>
+                                    </form>
                                 </div>
                             </div>
+
                         </div>
                     </div>
                 </div>
