@@ -4,25 +4,26 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        len:[1]
-      }
+        len: [1],
+      },
     },
     item: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        len:[1]
-      }
+        len: [1],
+      },
     },
   });
 
+  // eslint-disable-next-line func-names
   Wish.associate = function (models) {
     Wish.belongsTo(models.User, {
       foreignKey: {
-        allowNull:false
-      }
-    })
-  }
+        allowNull: false,
+      },
+    });
+  };
 
   return Wish;
 };

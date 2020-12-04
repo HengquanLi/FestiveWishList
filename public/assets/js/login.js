@@ -50,15 +50,12 @@ function myFunction2() {
   } else {
     x.type = 'password';
   }
-}
-myFunction2();
 
-function myFunction3() {
-  const x = document.getElementById('confirmPWsignup');
-  if (x.type === 'password') {
-    x.type = 'text';
+  const y = document.getElementById('confirmPWsignup');
+  if (y.type === 'password') {
+    y.type = 'text';
   } else {
-    x.type = 'password';
+    y.type = 'password';
   }
 }
-myFunction3();
+myFunction2();

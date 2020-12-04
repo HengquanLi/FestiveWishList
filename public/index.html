@@ -50,14 +50,14 @@
                                 </div>
                                 <!-- Password Signup -->
                                 <div class="password">
-                                    <input id="passwordSignup" type='text' placeholder="    Password">
-                                    <input type="checkbox" onclick="myFunction2()"> Show Password
+                                    <input name="signupPWFields" id="passwordSignup" type='text' placeholder="    Password">
                                 </div>
                                 <!-- Confirm Password Signup -->
                                 <div class="password" id="confirmPWdiv">
-                                    <input id="confirmPWsignup" type='text' placeholder="    Confirm Password">
-                                    <input type="checkbox" onclick="myFunction3()"> Show Password
+                                    <input name="signupPWFields" id="confirmPWsignup" type='text' placeholder="    Confirm Password">
+                                    <input type="checkbox" onclick="myFunction2()"> Show Password
                                 </div>
+                                <div id="err_messages"></div>
                             </div>
                             <div class="modal-footer">
                                 <input class="btn btn-default" data-dismiss="modal" value="Close">
@@ -98,6 +98,8 @@
                 <h1 class="title"> Wish List</h1>
                 <h3> Login to view your wishlists </h3>
             </div>
+            <div id="noUser"></div>
+            <br>
             <div class="username">
                 <input id="usernameID" type='text' placeholder="    Username">
             </div>

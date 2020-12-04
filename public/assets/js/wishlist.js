@@ -19,39 +19,47 @@ function nextPage() {
     .siblings();
 }
 $('.book').on('dblclick', '.active', nextPage).on('dblclick', '.flipped', prevPage);
-$('.book').hammer().on('swipeleft', nextPage);
-$('.book').hammer().on('swipeleft', prevPage);
+// $('.book').hammer().on('swipeleft', nextPage);
+// $('.book').hammer().on('swipeleft', prevPage);
 
 $(document).ready(() => {
   $('#saveWishList').on('click', (event) => {
+    console.log('save btn clicked');
     event.preventDefault();
+
     const itemArray = [];
     const wishListName = $('#wishlistName');
+    console.log(wishListName.val());
     const items = $('.item');
     console.log(items);
     console.log(items.val());
 
-    // eslint-disable-next-line no-plusplus
-    for (let i = 0; i < items.length; i++) {
-      console.log(items[i].value);
-      const itemValue = items[i].value;
-      console.log(itemValue);
-      if (itemValue !== '') {
-        itemArray.push(itemValue);
+    if (!wishListName.val()) {
+      // eslint-disable-next-line no-alert
+      $('.modal').modal();
+      $('#needWLtitle').modal('open');
+    } else {
+      // eslint-disable-next-line no-plusplus
+      for (let i = 0; i < items.length; i++) {
+        console.log(items[i].value);
+        const itemValue = items[i].value;
+        console.log(itemValue);
+        if (itemValue !== '') {
+          itemArray.push(itemValue);
+        }
       }
-    }
-    console.log('clicked');
-    console.log(itemArray);
+      console.log(itemArray);
 
-    if (!wishListName) {
-      return;
+      if (!wishListName) {
+        return;
+      }
+      // getItems();
+      const newWishList = {
+        wishName: wishListName.val().trim(),
+        item: JSON.stringify(itemArray),
+      };
+      console.log(newWishList);
+      $.post('/api/wishlist', newWishList);
     }
-    // getItems();
-    const newWishList = {
-      wishName: wishListName.val().trim(),
-      item: JSON.stringify(itemArray),
-    };
-    console.log(newWishList);
-    $.post('/api/wishlist', newWishList);
   });
 });

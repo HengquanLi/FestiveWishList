@@ -16,8 +16,9 @@ $(document).ready(() => {
     };
 
     if (!userData.email || !userData.password) {
-      $('#confirmPWdiv').append('<br>Username and password fields cannot be blank.');
+      $('#err_messages').text('Username and password fields cannot be blank.');
     }
+
     // eslint-disable-next-line no-use-before-define
     if (confirmPW.val() === passwordInput.val()) {
       console.log('passwords match');
@@ -29,13 +30,12 @@ $(document).ready(() => {
       // eslint-disable-next-line no-console
       console.log('Passwords DO NOT match');
       // eslint-disable-next-line no-alert
-      $('#confirmPWdiv').append('<br>Passwords DO NOT match.');
+      $('#err_messages').text('Passwords DO NOT match.');
     }
   });
 
   function signUpUser(email, password) { 
     // eslint-disable-next-line no-undef
-    event.preventDefault();
     $.post('/api/signup', {
       email: email,
       password: password,
@@ -43,15 +43,20 @@ $(document).ready(() => {
       .then((data) => {
         // eslint-disable-next-line no-alert
         window.location.replace('/');
-        $('.modal').modal();
-        $('#signedUpSuccess').modal('open');
       })
       // eslint-disable-next-line no-use-before-define
       .catch(handleLoginErr);
 
     function handleLoginErr(err) {
+      $('#err_messages').text('Please enter a valid email address.');
       $('#alert .msg').text(err.responseJSON);
       $('#alert').fadeIn(500);
     }
+    function signUpSuccess() {
+      // $('.modal').modal();
+      // $('#signedUpSuccess').modal('open');
+      alert("signed up successfully");
+    }
+    signUpSuccess();
   }
 });

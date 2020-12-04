@@ -33,6 +33,7 @@ $(document).ready(() => {
         window.location.replace('/wishlist');
       })
       .catch((err) => {
+        $('#noUser').text('Wrong email or password!');
         // eslint-disable-next-line no-console
         console.log(err);
       });

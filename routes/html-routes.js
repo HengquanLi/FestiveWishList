@@ -11,7 +11,7 @@ module.exports = function(app) {
     if (req.user) {
       res.redirect('/wishlist');
     }
-    res.sendFile(path.join(__dirname, '../index.html'));
+    res.sendFile(path.join(__dirname, '../public/index.html'));
   });
 
   app.get('/login', (req, res) => {
@@ -19,11 +19,11 @@ module.exports = function(app) {
     if (req.user) {
       res.redirect('/wishlist');
     }
-    res.sendFile(path.join(__dirname, '../index.html'));
+    res.sendFile(path.join(__dirname, '../public/index.html'));
   });
 
   // Here we've add our isAuthenticated middleware to this route.
   app.get('/wishlist', isAuthenticated, (req, res) => {
-    res.sendFile(path.join(__dirname, '../wishlist.html')); 
+    res.sendFile(path.join(__dirname, '../public/wishlist.html'));
   });
 };
