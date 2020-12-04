@@ -42,7 +42,7 @@ $(document).ready(() => {
     })
       .then((data) => {
         // eslint-disable-next-line no-alert
-        window.location.replace('/');
+        window.location.replace('/wishlist');
       })
       // eslint-disable-next-line no-use-before-define
       .catch(handleLoginErr);
@@ -52,11 +52,5 @@ $(document).ready(() => {
       $('#alert .msg').text(err.responseJSON);
       $('#alert').fadeIn(500);
     }
-    function signUpSuccess() {
-      // $('.modal').modal();
-      // $('#signedUpSuccess').modal('open');
-      alert("signed up successfully");
-    }
-    signUpSuccess();
   }
 });
