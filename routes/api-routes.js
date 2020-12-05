@@ -46,4 +46,6 @@ module.exports = function (app) {
       });
     }
   });
+  app.get('/currentUser', (req, res) => res.json(req.user));
+
 };

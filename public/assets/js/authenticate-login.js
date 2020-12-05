@@ -21,10 +21,20 @@ $(document).ready(() => {
     loginUser(userData.email, userData.password);
     emailInput.val('');
     passwordInput.val('');
+
+    $.get('/currentUser', function(data) {
+      console.log(data);
+    });
   });
 
   function loginUser(email, password) {
     // eslint-disable-next-line no-undef
+
+
+    $.get('/currentUser', function(data) {
+      console.log(data);
+    });
+    
     $.post('/api/login', {
       email: email,
       password: password,

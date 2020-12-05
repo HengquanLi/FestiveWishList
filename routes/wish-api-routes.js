@@ -2,7 +2,11 @@ const db = require('../models');
 
 module.exports = function (app) {
   app.get('/view-wishes', (req, res) => {
-    db.Wish.findAll().then((data) => {
+    db.Wish.findAll({
+      where: {
+        UserId: req.user.id,
+      },
+    }).then((data) => {
       const hbsObject = {
         wishes: data.map(val => {
           currentObj = val.dataValues
@@ -18,6 +22,7 @@ module.exports = function (app) {
     db.Wish.create({
       wish_name: req.body.wishName,
       item: req.body.item,
+      UserId: req.user.id,
     }).then((dbWish) => {
       res.json(dbWish);
     });

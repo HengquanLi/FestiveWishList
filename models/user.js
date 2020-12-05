@@ -18,10 +18,6 @@ module.exports = function (sequelize, DataTypes) {
     },
   });
 
-// if (User.email.validate.isEmail === false) {
-//   $("#usernameSignup").append(" <p>Please enter a valid email adress.</p> ")
-// };
-
   User.associate = function (models) {
     User.hasMany(models.Wish, {
       onDelete: "cascade"
@@ -35,6 +31,6 @@ module.exports = function (sequelize, DataTypes) {
     // eslint-disable-next-line no-param-reassign
     user.password = bcrypt.hashSync(user.password, bcrypt.genSaltSync(10), null);
   });
-  
+
   return User;
 };

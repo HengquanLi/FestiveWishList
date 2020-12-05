@@ -23,6 +23,11 @@ $('.book').on('dblclick', '.active', nextPage).on('dblclick', '.flipped', prevPa
 // $('.book').hammer().on('swipeleft', prevPage);
 
 $(document).ready(() => {
+
+  $.get('/currentUser', function(data) {
+    console.log(data);
+  });
+
   $('#saveWishList').on('click', (event) => {
     console.log('save btn clicked');
     event.preventDefault();
