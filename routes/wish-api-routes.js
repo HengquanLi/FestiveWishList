@@ -11,6 +11,13 @@ module.exports = function (app) {
         wishes: data.map((val) => {
           currentObj = val.dataValues;
           currentObj.item = JSON.parse(currentObj.item);
+<<<<<<< HEAD
+          if (currentObj.item.length == 0) {
+            currentObj.item.push('What do I want...???');
+          }
+
+=======
+>>>>>>> main
           return currentObj;
         }),
       };
@@ -18,13 +25,50 @@ module.exports = function (app) {
       res.render('view-wishlist', hbsObject);
     });
   });
+
   app.post('/api/wishlist', (req, res) => {
     db.Wish.create({
       wish_name: req.body.wishName,
       item: req.body.item,
+<<<<<<< HEAD
+    }).then(() => {
+      res.json({ success: true });
+    });
+  });
+
+  app.get('/api/wishlist/:id', (req, res) => {
+    db.Wish.findOne({
+      where: {
+        id: req.params.id,
+      },
+    }).then((data) => {
+      console.log(data);
+      const hbsObject = {
+        wish: data.dataValues,
+      };
+      res.render('wishlist', hbsObject);
+      console.log(data);
+    });
+  });
+
+  app.put('/api/wishlist/', (req, res) => {
+    // console.log(body);
+    console.log(req.body);
+    db.Wish.update({
+      // wish_name: req.body.wishName,
+      item: req.body.item,
+    },
+    {
+      where: {
+        id: req.body.id,
+      },
+    }).then(() => {
+      res.json({ success: true });
+=======
       UserId: req.user.id,
     }).then((dbWish) => {
       res.json(dbWish);
+>>>>>>> main
     });
   });
 };

@@ -13,7 +13,7 @@
         integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <!-- Style sheet links --------------------------------------------- -->
     <!-- <link rel="stylesheet" href="./public/assets/css/login.css"> -->
-    <link rel="stylesheet" href="./css/view-wishlist.css">
+    <link rel="stylesheet" href="/css/view-wishlist.css">
     <!-- <link rel="stylesheet" href="./public/assets/css/wishlist.css"> -->
     <!-- Fonts -------------------------------------------------------- -->
     <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans&display=swap" rel="stylesheet">
@@ -47,29 +47,37 @@
                         <div class="card__face card__face--back">
                             <div class="card__content">
                                 <div class="card__header">
-                                    <h3 id="wishlistOneTitle">{{wishName}}</h3>
+                                    <!-- and this will Link also due to same id -->
+                                    <h3 id="wishlistOneTitle">{{this.wish_name}}</h3>
                                 </div>
                                 <div class="card__body">
                                     <ul>
                                         {{#each this.item}}
                                         <li>
-                                            {{this}}
+                                            <a href="https://www.amazon.com.au/s?k={{this}}"
+                                                target="_blank">{{this}}</a>
                                         </li>
-
                                         {{/each}}
-
                                     </ul>
+                                    <form id="cform" action="/api/wishlist/{{this.id}}" method="put">
+                                        <button type="submit" class="btn add-btn">Edit</button>
+                                    </form>
                                 </div>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
     {{/each}}
+<<<<<<< HEAD
+    <script src="/js/view-wishlist.js"></script>
+=======
 
     <script src="/assets/js/view-wishlist.js"></script>
+>>>>>>> main
 </body>
 
 </html>
