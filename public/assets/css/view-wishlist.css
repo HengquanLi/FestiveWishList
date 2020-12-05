@@ -14,7 +14,11 @@ body{
     width: 100%;
     min-height: 100vh;
     font-family: 'Merriweather Sans', sans-serif;
-    background-color: #787c80;
+    background: linear-gradient(
+        to right,
+        #ffffff,
+        rgba(8, 83, 156, 1)
+    );
     background-size: cover;
     margin: 0;
    

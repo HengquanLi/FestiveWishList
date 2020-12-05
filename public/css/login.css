@@ -33,7 +33,11 @@ body {
     align-items: center;
     justify-content: center;
     perspective: 1000px;
-    background-color: #787c80;
+    background: linear-gradient(
+        to right,
+        #ffffff,
+        rgba(8, 83, 156, 1)
+    );
 }
 .container {   
     width: 50%; 
