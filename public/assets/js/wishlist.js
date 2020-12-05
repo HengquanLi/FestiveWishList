@@ -23,21 +23,15 @@ $('.book').on('dblclick', '.active', nextPage).on('dblclick', '.flipped', prevPa
 // $('.book').hammer().on('swipeleft', prevPage);
 
 $(document).ready(() => {
-
-  $.get('/currentUser', function(data) {
-    console.log(data);
+  $.get('/currentUser', (data) => {
   });
 
   $('#saveWishList').on('click', (event) => {
-    console.log('save btn clicked');
     event.preventDefault();
 
     const itemArray = [];
     const wishListName = $('#wishlistName');
-    console.log(wishListName.val());
     const items = $('.item');
-    console.log(items);
-    console.log(items.val());
 
     if (!wishListName.val()) {
       // eslint-disable-next-line no-alert
@@ -46,15 +40,11 @@ $(document).ready(() => {
     } else {
       // eslint-disable-next-line no-plusplus
       for (let i = 0; i < items.length; i++) {
-        console.log(items[i].value);
         const itemValue = items[i].value;
-        console.log(itemValue);
         if (itemValue !== '') {
           itemArray.push(itemValue);
         }
       }
-      console.log(itemArray);
-
       if (!wishListName) {
         return;
       }
@@ -63,8 +53,20 @@ $(document).ready(() => {
         wishName: wishListName.val().trim(),
         item: JSON.stringify(itemArray),
       };
-      console.log(newWishList);
       $.post('/api/wishlist', newWishList);
     }
   });
+});
+
+// This is the auto popup
+
+$(document).ready(() => {
+  $('.modal-backdrop').remove();
+  setTimeout(() => {
+    $('#splashScreen').modal('show');
+
+    setTimeout(() => {
+      $('#splashScreen').modal('hide');
+    }, 5000);
+  }, 500);
 });
