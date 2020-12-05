@@ -40,9 +40,9 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <div class="modal" id="splashScreen">
-                    <div class="modal-dialog modal-lg">
-                        <div class="modal-content">
+                <div class="modal no-border" id="splashScreen">
+                    <div class="modal-dialog modal-lg no-border">
+                        <div class="modal-content no-border">
                             <svg id="logo" width="880" height="120" viewBox="0 0 880 120" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -88,27 +88,11 @@
         </div>
     </div>
 
-    <a id="logoutbtn" href="/logout">Logout</a>
+   
     <div id="floatingRectangle">
-        <a href="index.html"><span class="material-icons" id="backIcon">arrow_back_ios </span></a>
+        <a href="/logout"><span class="material-icons" id="backIcon">arrow_back_ios </span></a>
     </div>
-    <div class="modal fade" id="needWLtitle">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <img id="signUpLogo" src="/assets/img/signup.png" alt="heart shopping">
-                </div>
-                <div class="modal-body">
-                    <div class="d-flex justify-content-center">
-                        <h1 id="signedUpSuccessText">Please enter a title for your wishlist</h1>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <input class="btn btn-default" data-dismiss="modal" value="Ok" id="okbtn">
-                </div>
-            </div>
-        </div>
-    </div>
+
     <!-- Book starts here -->
     <div class="scene">
         <article class="book">
@@ -120,7 +104,7 @@
                 </div>
                 <div class="back">
                     <!-- Grab the wishlist name here -->
-                    <h1> <input type="text" id="wishlistName" name="wishlistName" placeholder="Type Wishlist Name Here">
+                    <h1> <input type="text" id="wishlistName" name="wishlistName" placeholder="Enter Title">
                     </h1>
                     <div class="form" id="pageContent">
                         <!-- Grab inputs using these input id's -->

@@ -27,7 +27,7 @@ body{
     color: #DA3E3F;
     font-size: 100px;
     z-index: 3;
-    position: absolute; 
+    position: fixed; 
     top: 298px;
     height: 100px;     
     padding: 0;
@@ -61,6 +61,17 @@ body{
     width: 250px;
     height: 350px;
     perspective: 1000px;
+}
+.card__inner0{
+    width: 100%;
+    height: 100%;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    position: relative;
+}
+.card__inner0.is-flipped{
+    transform: rotateY(180deg)
 }
 .card__inner1{
     width: 100%;
