@@ -4,7 +4,7 @@ module.exports = function (app) {
   app.get('/view-wishes', (req, res) => {
     db.Wish.findAll({
       where: {
-        UserId: req.user.id,
+        iUd: req.user.id,
       },
     }).then((data) => {
       const hbsObject = {
