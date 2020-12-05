@@ -17,7 +17,6 @@ module.exports = function (app) {
           return currentObj;
         }),
       };
-      console.log(hbsObject);
       res.render('view-wishlist', hbsObject);
     });
   });
@@ -43,13 +42,10 @@ module.exports = function (app) {
         wish: data.dataValues,
       };
       res.render('wishlist', hbsObject);
-      console.log(data);
     });
   });
 
   app.put('/api/wishlist/', (req, res) => {
-    // console.log(body);
-    console.log(req.body);
     db.Wish.update({
       // wish_name: req.body.wishName,
       item: req.body.item,
@@ -58,8 +54,8 @@ module.exports = function (app) {
       where: {
         id: req.body.id,
       },
-    // }).then(() => {
-    //   res.json({ success: true });
+    }).then(() => {
+      res.json({ success: true });
     }).then((dbWish) => {
       res.json(dbWish);
     });
