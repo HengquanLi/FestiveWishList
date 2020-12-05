@@ -5,7 +5,7 @@ const path = require('path');
 const isAuthenticated = require('../config/middleware/isAuthenticated');
 
 // eslint-disable-next-line func-names
-module.exports = function(app) {
+module.exports = function (app) {
   app.get('/', (req, res) => {
     // If the user already has an account send them to the wishlist page
     if (req.user) {

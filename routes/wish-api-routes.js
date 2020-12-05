@@ -8,10 +8,10 @@ module.exports = function (app) {
       },
     }).then((data) => {
       const hbsObject = {
-        wishes: data.map(val => {
-          currentObj = val.dataValues
-          currentObj.item = JSON.parse(currentObj.item)
-          return currentObj
+        wishes: data.map((val) => {
+          currentObj = val.dataValues;
+          currentObj.item = JSON.parse(currentObj.item);
+          return currentObj;
         }),
       };
       console.log(hbsObject);
@@ -27,4 +27,4 @@ module.exports = function (app) {
       res.json(dbWish);
     });
   });
-}
+};

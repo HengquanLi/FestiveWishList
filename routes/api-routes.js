@@ -5,12 +5,12 @@ const passport = require('../config/passport');
 // eslint-disable-next-line func-names
 module.exports = function (app) {
   app.post('/api/login', passport.authenticate('local'), (req, res) => {
-    console.log("got to login post route");
+    console.log('got to login post route');
     res.json(req.user);
   });
 
   app.post('/api/signup', (req, res) => {
-    console.log("got to signup post route");
+    console.log('got to signup post route');
     // eslint-disable-next-line no-console
     db.User.create({
       email: req.body.email,
@@ -42,10 +42,9 @@ module.exports = function (app) {
       // Sending back a password, even a hashed password, isn't a good idea
       res.json({
         email: req.user.email,
-        id: req.user.id
+        id: req.user.id,
       });
     }
   });
   app.get('/currentUser', (req, res) => res.json(req.user));
-
 };
