@@ -23,19 +23,38 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <!-- Hammer package------------------------------------------------ -->
-    <script src="./public/assets/js/hammer.min.js"></script>
+    <script src="/assets/js/hammer.min.js"></script>
     <!-- Bootstrap--------------------------------------------------- -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
         crossorigin="anonymous"></script>
 
+    <!-- Google icons ----------------------------------------------------->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 </head>
 
 <body>
+    <a id="logoutbtn" href="/logout">Logout</a>
     <div id="floatingRectangle">
         <a href="index.html"><span class="material-icons" id="backIcon">arrow_back_ios </span></a>
+    </div>
+    <div class="modal fade" id="needWLtitle">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <img id="signUpLogo" src="./img/signup.png" alt="heart shopping">
+                </div>
+                <div class="modal-body">
+                    <div class="d-flex justify-content-center">
+                        <h1 id="signedUpSuccessText">Please enter a title for your wishlist</h1>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <input class="btn btn-default" data-dismiss="modal" value="Ok" id="okbtn">
+                </div>
+            </div>
+        </div>
     </div>
     <!-- Book starts here -->
     <div class="scene">
@@ -96,7 +115,7 @@
                     <!-- This is the submit button to save the wishlist -->
 
                     <button id="saveWishList">Save List</button>
-                    <button id="viewWishList""><a id="view" href="/view-wishes">View List</a></button>
+                    <button id="viewWishList"><a id="view" href="/view-wishes">View List</a></button>
                 </div>
             </section>
             <section class="page">
@@ -118,9 +137,9 @@
         integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
         crossorigin="anonymous"></script>
     <!-- Script links--------------------------------------------------- -->
-    <script src="./js/login.js"></script>
-    <script src="./js/view-wishlist.js"></script>
-    <script src="./js/wishlist.js"></script>
+    <script src="./assets/js/login.js"></script>
+    <script src="./assets/js/view-wishlist.js"></script>
+    <script src="./assets/js/wishlist.js"></script>
 </body>
 
 </html>

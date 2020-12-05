@@ -42,3 +42,20 @@ function myFunction() {
   }
 }
 myFunction();
+
+function myFunction2() {
+  const x = document.getElementById('passwordSignup');
+  if (x.type === 'password') {
+    x.type = 'text';
+  } else {
+    x.type = 'password';
+  }
+
+  const y = document.getElementById('confirmPWsignup');
+  if (y.type === 'password') {
+    y.type = 'text';
+  } else {
+    y.type = 'password';
+  }
+}
+myFunction2();
