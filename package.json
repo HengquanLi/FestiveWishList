@@ -4,9 +4,8 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "lint": "eslint **/*.js"
+    "lint": "eslint --fix routes/**.js"
   },
   "repository": {
     "type": "git",
@@ -18,7 +17,19 @@
     "url": "https://github.com/GrandBearSleepy/FestiveWishList/issues"
   },
   "homepage": "https://github.com/GrandBearSleepy/FestiveWishList#readme",
-  "dependencies": {},
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^5.2.0",
+    "handlebars": "^4.7.6",
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.3.5",
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^8.2.0",
+    "express-session": "^1.17.1",
+    "mysql": "^2.18.1",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0"
+  },
   "devDependencies": {
     "eslint": "^7.14.0",
     "eslint-config-airbnb-base": "^14.2.1",
