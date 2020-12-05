@@ -33,28 +33,22 @@ $(document).ready(() => {
     const wishListName = $('#wishlistName');
     const items = $('.item');
 
-    if (!wishListName.val()) {
-      // eslint-disable-next-line no-alert
-      $('.modal').modal();
-      $('#needWLtitle').modal('open');
-    } else {
-      // eslint-disable-next-line no-plusplus
-      for (let i = 0; i < items.length; i++) {
-        const itemValue = items[i].value;
-        if (itemValue !== '') {
-          itemArray.push(itemValue);
-        }
+    // eslint-disable-next-line no-plusplus
+    for (let i = 0; i < items.length; i++) {
+      const itemValue = items[i].value;
+      if (itemValue !== '') {
+        itemArray.push(itemValue);
       }
-      if (!wishListName) {
-        return;
-      }
-      // getItems();
-      const newWishList = {
-        wishName: wishListName.val().trim(),
-        item: JSON.stringify(itemArray),
-      };
-      $.post('/api/wishlist', newWishList);
     }
+    // if (!wishListName) {
+    //   return;
+    // }
+    // getItems();
+    const newWishList = {
+      wishName: wishListName.val().trim(),
+      item: JSON.stringify(itemArray),
+    };
+    $.post('/api/wishlist', newWishList);
   });
 });
 

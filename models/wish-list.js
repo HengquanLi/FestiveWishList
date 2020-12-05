@@ -2,7 +2,7 @@ module.exports = function (sequelize, DataTypes) {
   const Wish = sequelize.define('Wish', {
     wish_name: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
       validate: {
         len: [1],
       },
