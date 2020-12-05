@@ -4,20 +4,16 @@ module.exports = function (app) {
   app.get('/view-wishes', (req, res) => {
     db.Wish.findAll({
       where: {
-        iUd: req.user.id,
+        UserId: req.user.id,
       },
     }).then((data) => {
       const hbsObject = {
         wishes: data.map((val) => {
-          currentObj = val.dataValues;
+          const currentObj = val.dataValues;
           currentObj.item = JSON.parse(currentObj.item);
-<<<<<<< HEAD
           if (currentObj.item.length == 0) {
             currentObj.item.push('What do I want...???');
           }
-
-=======
->>>>>>> main
           return currentObj;
         }),
       };
@@ -30,7 +26,7 @@ module.exports = function (app) {
     db.Wish.create({
       wish_name: req.body.wishName,
       item: req.body.item,
-<<<<<<< HEAD
+      UserId: req.user.id,
     }).then(() => {
       res.json({ success: true });
     });
@@ -62,13 +58,10 @@ module.exports = function (app) {
       where: {
         id: req.body.id,
       },
-    }).then(() => {
-      res.json({ success: true });
-=======
-      UserId: req.user.id,
+    // }).then(() => {
+    //   res.json({ success: true });
     }).then((dbWish) => {
       res.json(dbWish);
->>>>>>> main
     });
   });
 };
