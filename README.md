@@ -33,5 +33,5 @@ Matthew Harvey (https://github.com/Mathew-Harvey), Leon Li (https://github.com/G
 <img src="./app-screenshots/login.png" alt="Login screen">
 <img src="./app-screenshots/signup.png" alt="Sign up screen">
 <img src="./app-screenshots/after-login.png" alt="Post-login screen">
-<img src="./app-screenshots/save-wishlist.png" alt="Wishlist-creation screen">
+<img src="./app-screenshots/create-wishlist.png" alt="Wishlist-creation screen">
 <img src="./app-screenshots/view-wishlist.png" alt="Wishlist viewing screen">
